@@ -1,0 +1,52 @@
+<ion-header back>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Inscription</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div *ngIf="info1">
+          <p>Ton numéro de téléphone  :<b>{{numeroIdentifiant}}</b></p>
+          <p>Tu vas revevoir un sms avec un code.Il faut le reporter ci-dessous.</p>
+          (Cela nous permet de vérifier que c'est bien ton numéro de téléphone)
+    </div>
+    <div *ngIf="info2">
+          <p>Super,</p>
+          <p>Peut tu nous donner ton Prénom,ce sera plus sympa.</p>
+    </div>
+             <ion-card >
+       <!--  <ion-card-header>
+             <h5><b>Watersports</b> services</h5>
+         </ion-card-header>
+        -->
+         <ion-list padding>
+             <ion-item>
+                 <ion-label stacked>Code </ion-label>
+                 <ion-input type="number" [(ngModel)]="codeSms" aria-placeholder="+261 3x xx xxx xx"></ion-input>
+               </ion-item>
+             <div *ngIf="validation">
+                <ion-item>
+                    <ion-label stacked>Nom  </ion-label>
+                    <ion-input type="number" [(ngModel)]="Nom" aria-placeholder="+261 3x xx xxx xx"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label stacked>Email </ion-label>
+                      <ion-input type="number" [(ngModel)]="email" aria-placeholder="+261 3x xx xxx xx"></ion-input>
+                    </ion-item>
+             </div>
+       
+           <ion-item >
+               <ion-row>
+                   <ion-col col-12>
+                       <button ion-button small (tap)="btnValiderCode()">Valider</button>
+                     </ion-col>
+                 </ion-row>
+           </ion-item>
+       
+         </ion-list>
+       </ion-card>
+
+</ion-content>
